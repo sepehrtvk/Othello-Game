@@ -199,57 +199,57 @@ public class OthelloGame {
         return false;
     }
 
-//    private boolean isAllowedAngle(int x, int y) {
-//        if (x != 7 && x != 0 && y != 0 && y != 7) {
-//            if (gameMap[x + 1][y + 1] == player || gameMap[x - 1][y - 1] == player) return false;
-//        }
-//        char icon;
-//        if (player == '◯') icon = '●';
-//        else icon = '◯';
-//        for (int i = 1; i < 8 - x && i < 8 - y; i++) {
-//            if (x < 6 && y < 6) {
-//                if (gameMap[x + i][y + i] == icon && gameMap[x + i + 1][y + i + 1] == player) {
-//                    for (int k = i; k > 0; k--) {
-//                        gameMap[x - k][y +k] = player;
-//                    }
-//                    return true;
-//                }
-//            } else {
-//                if (gameMap[x - i][y - i] == icon && gameMap[x - i - 1][y - i - 1] == player) {
-//                    for (int k = 1; k < 8 - x && k < 8 - y; k++) {
-//                        gameMap[x - k][y - k] = player;
-//                    }
-//                    return true;
-//                }
-//            }
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x - i][y - i] == icon && gameMap[x - i - 1][y - i - 1] == player) {
-//                for (int k = i; k > 0; k--) {
-//                    gameMap[x - k][y - k] = player;
-//                }
-//                return true;
-//            }
-//
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x + i][y - i] == icon && gameMap[x + i + 1][y - i - 1] == player) {
-//                for (int k = i; k > 0; k--) {
-//                    gameMap[x + k][y - k] = player;
-//                }
-//                return true;
-//            }
-//
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x - i][y + i] == icon && gameMap[x - i - 1][y + i + 1] == player) {
-//                for (int k = i; k > 0; k--) {
-//                    gameMap[x - k][y + k] = player;
-//                }
-//                return true;
-//            }
-//
-//        }
-//        return false;
-//    }
+    private boolean isAllowedAngle(int x, int y) {
+        if (x != 7 && x != 0 && y != 0 && y != 7) {
+            if (gameMap[x + 1][y + 1] == player || gameMap[x - 1][y - 1] == player) return false;
+        }
+        char icon;
+        if (player == '◯') icon = '●';
+        else icon = '◯';
+        for (int i = 1; i < 8 - x && i < 8 - y; i++) {
+            if (x < 6 && y < 6) {
+                if (gameMap[x + i][y + i] == icon && gameMap[x + i + 1][y + i + 1] == player) {
+                    for (int k = i; k > 0; k--) {
+                        gameMap[x - k][y +k] = player;
+                    }
+                    return true;
+                }
+            } else {
+                if (gameMap[x - i][y - i] == icon && gameMap[x - i - 1][y - i - 1] == player) {
+                    for (int k = 1; k < 8 - x && k < 8 - y; k++) {
+                        gameMap[x - k][y - k] = player;
+                    }
+                    return true;
+                }
+            }
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (gameMap[x - i][y - i] == icon && gameMap[x - i - 1][y - i - 1] == player) {
+                for (int k = i; k > 0; k--) {
+                    gameMap[x - k][y - k] = player;
+                }
+                return true;
+            }
+
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (gameMap[x + i][y - i] == icon && gameMap[x + i + 1][y - i - 1] == player) {
+                for (int k = i; k > 0; k--) {
+                    gameMap[x + k][y - k] = player;
+                }
+                return true;
+            }
+
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (gameMap[x - i][y + i] == icon && gameMap[x - i - 1][y + i + 1] == player) {
+                for (int k = i; k > 0; k--) {
+                    gameMap[x - k][y + k] = player;
+                }
+                return true;
+            }
+
+        }
+        return false;
+    }
 }
