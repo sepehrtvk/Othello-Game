@@ -140,64 +140,64 @@ public class OthelloGame {
         return false;
     }
 
-//    private boolean isAllowedColumn(int x, int y) {
-//        if (x != 7 && x != 0 && y != 8 && y != -1) {
-//            if (gameMap[x + 1][y] == player || gameMap[x - 1][y] == player) return false;
-//        }
-//        char icon;
-//        if (player == '◯') icon = '●';
-//        else icon = '◯';
-//        for (int i = 1; i < 8 - x; i++) {
-//            if (gameMap[x + i][y] == icon && gameMap[x + i + 1][y] == player) {
-//                for (int k = i; k > 0; k--) {
-//                    gameMap[x + k][y] = player;
-//                }
-//                if (x < 7 && y < 7) {
-//                    if (gameMap[x + 1][y + 1] == icon && gameMap[x + 2][y + 2] == player)
-//                        gameMap[x + 1][y + 1] = player;
-//                }
-//                if (y > 1 && x > 1) {
-//                    if (gameMap[x - 1][y - 1] == icon && gameMap[x - 2][y - 2] == player)
-//                        gameMap[x - 1][y - 1] = player;
-//                }
-//                if (y > 1 && x < 7) {
-//                    if (gameMap[x + 1][y - 1] == icon && gameMap[x + 2][y - 2] == player)
-//                        gameMap[x + 1][y - 1] = player;
-//                }
-//                if (x > 1 && y < 7) {
-//                    if (gameMap[x - 1][y + 1] == icon && gameMap[x - 2][y + 2] == player)
-//                        gameMap[x - 1][y + 1] = player;
-//                }
-//                return true;
-//            }
-//        }
-//        for (int i = 1; i < x; i++) {
-//            if (gameMap[x - i][y] == icon && gameMap[x - i - 1][y] == player) {
-//                for (int k = i; k > 0; k--) {
-//                    gameMap[x - k][y] = player;
-//                }
-//                if (x < 7 && y < 7) {
-//                    if (gameMap[x + 1][y + 1] == icon && gameMap[x + 2][y + 2] == player)
-//                        gameMap[x + 1][y + 1] = player;
-//                }
-//                if (y > 1) {
-//                    if (gameMap[x - 1][y - 1] == icon && gameMap[x - 2][y - 2] == player)
-//                        gameMap[x - 1][y - 1] = player;
-//                }
-//                if (y > 1) {
-//                    if (gameMap[x + 1][y - 1] == icon && gameMap[x + 2][y - 2] == player)
-//                        gameMap[x + 1][y - 1] = player;
-//                }
-//                if (gameMap[x - 1][y + 1] == icon && gameMap[x - 2][y + 2] == player)
-//                    gameMap[x - 1][y + 1] = player;
-//
-//                return true;
-//            }
-//
-//        }
-//
-//        return false;
-//    }
+    private boolean isAllowedColumn(int x, int y) {
+        if (x != 7 && x != 0 && y != 8 && y != -1) {
+            if (gameMap[x + 1][y] == player || gameMap[x - 1][y] == player) return false;
+        }
+        char icon;
+        if (player == '◯') icon = '●';
+        else icon = '◯';
+        for (int i = 1; i < 8 - x; i++) {
+            if (gameMap[x + i][y] == icon && gameMap[x + i + 1][y] == player) {
+                for (int k = i; k > 0; k--) {
+                    gameMap[x + k][y] = player;
+                }
+                if (x < 7 && y < 7) {
+                    if (gameMap[x + 1][y + 1] == icon && gameMap[x + 2][y + 2] == player)
+                        gameMap[x + 1][y + 1] = player;
+                }
+                if (y > 1 && x > 1) {
+                    if (gameMap[x - 1][y - 1] == icon && gameMap[x - 2][y - 2] == player)
+                        gameMap[x - 1][y - 1] = player;
+                }
+                if (y > 1 && x < 7) {
+                    if (gameMap[x + 1][y - 1] == icon && gameMap[x + 2][y - 2] == player)
+                        gameMap[x + 1][y - 1] = player;
+                }
+                if (x > 1 && y < 7) {
+                    if (gameMap[x - 1][y + 1] == icon && gameMap[x - 2][y + 2] == player)
+                        gameMap[x - 1][y + 1] = player;
+                }
+                return true;
+            }
+        }
+        for (int i = 1; i < x; i++) {
+            if (gameMap[x - i][y] == icon && gameMap[x - i - 1][y] == player) {
+                for (int k = i; k > 0; k--) {
+                    gameMap[x - k][y] = player;
+                }
+                if (x < 7 && y < 7) {
+                    if (gameMap[x + 1][y + 1] == icon && gameMap[x + 2][y + 2] == player)
+                        gameMap[x + 1][y + 1] = player;
+                }
+                if (y > 1) {
+                    if (gameMap[x - 1][y - 1] == icon && gameMap[x - 2][y - 2] == player)
+                        gameMap[x - 1][y - 1] = player;
+                }
+                if (y > 1) {
+                    if (gameMap[x + 1][y - 1] == icon && gameMap[x + 2][y - 2] == player)
+                        gameMap[x + 1][y - 1] = player;
+                }
+                if (gameMap[x - 1][y + 1] == icon && gameMap[x - 2][y + 2] == player)
+                    gameMap[x - 1][y + 1] = player;
+
+                return true;
+            }
+
+        }
+
+        return false;
+    }
 
 //    private boolean isAllowedAngle(int x, int y) {
 //        if (x != 7 && x != 0 && y != 0 && y != 7) {
