@@ -463,7 +463,13 @@ public class OthelloGame {
                 if(gameMap[i][j]==player2)counter2++;
             }
         }
-        System.out.println("The score of the black player is :" + counter1);
-        System.out.println("The score of the white player is :" + counter2);
+        System.out.println();
+        System.out.println("               +++++++++++++++++++++++++++++++++++++");
+        System.out.println("               | The score of the BLACK player | " + counter1+" |");
+        System.out.println("               | The score of the WHITE player | " + counter2+" |");
+        System.out.println("               +++++++++++++++++++++++++++++++++++++");
+        System.out.println();
+
+
     }
 }
