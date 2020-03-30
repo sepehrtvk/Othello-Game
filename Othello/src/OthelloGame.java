@@ -82,7 +82,7 @@ public class OthelloGame {
 
         switch (x) {
             case 'A':
-                if (isEmpty(y - 1, 0)&&isAllowed(y-1,0)) {
+                if (isEmpty(y - 1, 0) && isAllowed(y - 1, 1)) {
                     checkRow(y - 1, 0);
                     checkColumn(y - 1, 0);
                     checkAngle(y - 1, 0);
@@ -90,7 +90,7 @@ public class OthelloGame {
 
                 break;
             case 'B':
-                if (isEmpty(y - 1, 1)&&isAllowed(y-1,1)) {
+                if (isEmpty(y - 1, 1) && isAllowed(y - 1, 1)) {
                     checkRow(y - 1, 1);
                     checkColumn(y - 1, 1);
                     checkAngle(y - 1, 1);
@@ -99,7 +99,7 @@ public class OthelloGame {
 
                 break;
             case 'C':
-                if (isEmpty(y - 1, 2)&&isAllowed(y-1,2)) {
+                if (isEmpty(y - 1, 2) && isAllowed(y - 1, 2)) {
                     checkRow(y - 1, 2);
                     checkColumn(y - 1, 2);
                     checkAngle(y - 1, 2);
@@ -107,7 +107,7 @@ public class OthelloGame {
 
                 break;
             case 'D':
-                if (isEmpty(y - 1, 3)&&isAllowed(y-1,3)) {
+                if (isEmpty(y - 1, 3) && isAllowed(y - 1, 3)) {
                     checkRow(y - 1, 3);
                     checkColumn(y - 1, 3);
                     checkAngle(y - 1, 3);
@@ -116,7 +116,7 @@ public class OthelloGame {
 
                 break;
             case 'E':
-                if (isEmpty(y - 1, 4)&&isAllowed(y-1,4)) {
+                if (isEmpty(y - 1, 4) && isAllowed(y - 1, 4)) {
                     checkRow(y - 1, 4);
                     checkColumn(y - 1, 4);
                     checkAngle(y - 1, 4);
@@ -125,7 +125,7 @@ public class OthelloGame {
 
                 break;
             case 'F':
-                if (isEmpty(y - 1, 5)&&isAllowed(y-1,5)) {
+                if (isEmpty(y - 1, 5) && isAllowed(y - 1, 5)) {
                     checkRow(y - 1, 5);
                     checkColumn(y - 1, 5);
                     checkAngle(y - 1, 5);
@@ -134,7 +134,7 @@ public class OthelloGame {
 
                 break;
             case 'G':
-                if (isEmpty(y - 1, 6)&&isAllowed(y-1,6)) {
+                if (isEmpty(y - 1, 6) && isAllowed(y - 1, 6)) {
                     checkRow(y - 1, 6);
                     checkColumn(y - 1, 6);
                     checkAngle(y - 1, 6);
@@ -143,7 +143,7 @@ public class OthelloGame {
 
                 break;
             case 'H':
-                if (isEmpty(y - 1, 7)&&isAllowed(y-1,7)) {
+                if (isEmpty(y - 1, 7) && isAllowed(y - 1, 7)) {
                     checkRow(y - 1, 7);
                     checkColumn(y - 1, 7);
                     checkAngle(y - 1, 7);
@@ -159,76 +159,31 @@ public class OthelloGame {
         else return false;
     }
 
-    /* private boolean isAllowedRowBlack(int x, int y) {
-         if (y != 7 && y != 0 && x != -1 && x != 8) {
-             if (gameMap[x][y + 1] == player1 || gameMap[x][y - 1] == player1) return false;
-         }
-         char player2;
-         if (player1 == '◯') player2 = '●';
-         else player2 = '◯';
-         for (int i = 1; i < 8 - y; i++) {
-             if (gameMap[x][y + i] == player2 && gameMap[x][y + i + 1] == player1) {
-                 for (int k = i; k > 0; k--) {
-                     if (!isEmpty(x, y + k))
-                         gameMap[x][y + k] = player1;
-                 }
-                 if (x < 7 && y < 7) {
-                     if (gameMap[x + 1][y + 1] == player2 && gameMap[x + 2][y + 2] == player1)
-                         gameMap[x + 1][y + 1] = player1;
-                 }
-                 if (y > 1 && x > 1) {
-                     if (gameMap[x - 1][y - 1] == player2 && gameMap[x - 2][y - 2] == player1)
-                         gameMap[x - 1][y - 1] = player1;
-                 }
-                 if (y > 1 && x < 7) {
-                     if (gameMap[x + 1][y - 1] == player2 && gameMap[x + 2][y - 2] == player1)
-                         gameMap[x + 1][y - 1] = player1;
-                 }
-                 if (x > 1 && y < 7) {
-                     if (gameMap[x - 1][y + 1] == player2 && gameMap[x - 2][y + 2] == player1)
-                         gameMap[x - 1][y + 1] = player1;
-                 }
-                 return true;
-             }
-         }
-         for (int i = 1; i < y; i++) {
-             if (gameMap[x][y - i] == player2 && gameMap[x][y - i - 1] == player1) {
-                 for (int k = i; k > 0; k--) {
-                     if (!isEmpty(x, y - k))
-                         gameMap[x][y - k] = player1;
-                 }
-                 if (x < 7 && y < 7) {
-                     if (gameMap[x + 1][y + 1] == player2 && gameMap[x + 2][y + 2] == player1)
-                         gameMap[x + 1][y + 1] = player1;
-                 }
-                 if (x > 1) {
-                     if (gameMap[x - 1][y - 1] == player2 && gameMap[x - 2][y - 2] == player1)
-                         gameMap[x - 1][y - 1] = player1;
-                 }
-                 if (x < 7) {
-                     if (gameMap[x + 1][y - 1] == player2 && gameMap[x + 2][y - 2] == player1)
-                         gameMap[x + 1][y - 1] = player1;
-                 }
-                 if (y < 7) {
-                     if (gameMap[x - 1][y + 1] == player2 && gameMap[x - 2][y + 2] == player1)
-                         gameMap[x - 1][y + 1] = player1;
-                 }
-                 return true;
-             }
+    private boolean isAllowedRowBlack(int x, int y) {
+        if (y != 7 && y != 0 && x != -1 && x != 8) {
+            if (gameMap[x][y + 1] == player1 || gameMap[x][y - 1] == player1) return false;
+        }
 
-         }
-         return false;
-     }
- */
-//    private boolean isAllowedColumn(int x, int y) {
-//        if (x != 7 && x != 0 && y != 8 && y != -1) {
-//            if (gameMap[x + 1][y] == player1 || gameMap[x - 1][y] == player1) return false;
-//        }
-//        char player2;
-//        if (player1 == '◯') player2 = '●';
-//        else player2 = '◯';
-//        for (int i = 1; i < 8 - x; i++) {
-//            if (gameMap[x + i][y] == player2 && gameMap[x + i + 1][y] == player1) {
+        for (int i = 1; i < 8 - y; i++) {
+            if (gameMap[x][y + i] == player2 && gameMap[x][y + i + 1] == player1) {
+                return true;
+            }
+        }
+        for (int i = 1; i < y; i++) {
+            if (gameMap[x][y - i] == player2 && gameMap[x][y - i - 1] == player1) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    private boolean isAllowedColumn(int x, int y) {
+        if (x != 7 && x != 0 && y != 8 && y != -1) {
+            if (gameMap[x + 1][y] == player1 || gameMap[x - 1][y] == player1) return false;
+        }
+        for (int i = 1; i < 8 - x; i++) {
+            if (gameMap[x + i][y] == player2 && gameMap[x + i + 1][y] == player1) {
 //                for (int k = i; k > 0; k--) {
 //                    if (!isEmpty(x + k, y))
 //                        gameMap[x + k][y] = player1;
@@ -249,11 +204,11 @@ public class OthelloGame {
 //                    if (gameMap[x - 1][y + 1] == player2 && gameMap[x - 2][y + 2] == player1)
 //                        gameMap[x - 1][y + 1] = player1;
 //                }
-//                return true;
-//            }
-//        }
-//        for (int i = 1; i < x; i++) {
-//            if (gameMap[x - i][y] == player2 && gameMap[x - i - 1][y] == player1) {
+                return true;
+            }
+        }
+        for (int i = 1; i < x; i++) {
+            if (gameMap[x - i][y] == player2 && gameMap[x - i - 1][y] == player1) {
 //                for (int k = i; k > 0; k--) {
 //                    if (!isEmpty(x - k, y))
 //                        gameMap[x - k][y] = player1;
@@ -272,75 +227,75 @@ public class OthelloGame {
 //                }
 //                if (gameMap[x - 1][y + 1] == player2 && gameMap[x - 2][y + 2] == player1 && !isEmpty(x - 1, y + 1))
 //                    gameMap[x - 1][y + 1] = player1;
-//
-//                return true;
-//            }
-//
-//        }
-//
-//        return false;
-//    }
-//
-//    private boolean isAllowedAngle(int x, int y) {
-//        if (x != 7 && x != 0 && y != 0 && y != 7) {
-//            if (gameMap[x + 1][y + 1] == player1 || gameMap[x - 1][y - 1] == player1) return false;
-//        }
-//        char player2;
-//        if (player1 == '◯') player2 = '●';
-//        else player2 = '◯';
-//        if (x < 6 && y < 6) {
-//            for (int i = 1; i < 8 - x && i < 8 - y; i++) {
-//                if (gameMap[x + i][y + i] == player2 && gameMap[x + i + 1][y + i + 1] == player1) {
+
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
+    private boolean isAllowedAngle(int x, int y) {
+        if (x != 7 && x != 0 && y != 0 && y != 7) {
+            if (gameMap[x + 1][y + 1] == player1 || gameMap[x - 1][y - 1] == player1) return false;
+        }
+        if (x < 6 && y < 6) {
+            for (int i = 1; i < 8 - x && i < 8 - y; i++) {
+                if (gameMap[x + i][y + i] == player2 && gameMap[x + i + 1][y + i + 1] == player1) {
 //                    for (int k = i; k > 0; k--) {
 //                        if (!isEmpty(x - k, y + k))
 //                            gameMap[x - k][y + k] = player1;
 //                    }
-//                    return true;
-//                }
-//            }
-//        } else {
-//            for (int i = 1; i < 8 - x && i < 8 - y; i++) {
-//                if (gameMap[x + i][y + i] == player2 ) {
+                    return true;
+                }
+            }
+        } else {
+            for (int i = 1; i < 8 - x && i < 8 - y; i++) {
+                if (gameMap[x + i][y + i] == player2) {
 //                    for (int k = 1; k < 8 - x && k < 8 - y; k++) {
 //                        if (!isEmpty(x - k, y + k))
 //                            gameMap[x - k][y + k] = player1;
 //                    }
-//                    return true;
-//                }
-//            }
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x - i][y - i] == player2 && gameMap[x - i - 1][y - i - 1] == player1) {
+                    return true;
+                }
+            }
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (gameMap[x - i][y - i] == player2 && gameMap[x - i - 1][y - i - 1] == player1) {
 //                for (int k = i; k > 0; k--) {
 //                    if (!isEmpty(x - k, y - k))
 //                        gameMap[x - k][y - k] = player1;
 //                }
-//                return true;
-//            }
-//
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x + i][y - i] == player2 && gameMap[x + i + 1][y - i - 1] == player1) {
+                return true;
+            }
+
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (y < 9 + i && x < 7 - i && y > i + 1 && x > i + 1) {
+                if (gameMap[x + i][y - i] == player2 && gameMap[x + i + 1][y - i - 1] == player1) {
 //                for (int k = i; k > 0; k--) {
 //                    if (!isEmpty(x + k, y - k))
 //                        gameMap[x + k][y - k] = player1;
 //                }
-//                return true;
-//            }
-//
-//        }
-//        for (int i = 1; i < x && i < y; i++) {
-//            if (gameMap[x - i][y + i] == player2 && gameMap[x - i - 1][y + i + 1] == player1) {
+                    return true;
+                }
+            }
+        }
+        for (int i = 1; i < x && i < y; i++) {
+            if (x < 9 + i && y < 7 - i && x > i + 1 && y > i + 1) {
+                if (gameMap[x - i][y + i] == player2 && gameMap[x - i - 1][y + i + 1] == player1) {
 //                for (int k = i; k > 0; k--) {
 //                    if (!isEmpty(x - k, y + k))
 //                        gameMap[x - k][y + k] = player1;
 //                }
-//                return true;
-//            }
-//
-//        }
-//        return false;
-//    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void checkRow(int x, int y) {
         for (int i = 1; i < 8 - y; i++) {
             if (!isEmpty(x, y + i)) {
@@ -381,6 +336,7 @@ public class OthelloGame {
             if (!isEmpty(x + i, y)) {
                 if (gameMap[x + i][y] == player2) i++;
                 if (gameMap[x + i][y] == player1) {
+
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x + k, y))
                             gameMap[x + k][y] = player1;
@@ -483,10 +439,31 @@ public class OthelloGame {
     }
 
     private boolean isAllowed(int x, int y) {
-
-        return true;
+        if (x < 7 && y < 7&&x>0&&y>0) {
+            if (gameMap[x][y] == ' ' &&
+                    gameMap[x + 1][y] == ' ' &&
+                    gameMap[x][y + 1] ==' ' &&
+                    gameMap[x - 1][y] == ' ' &&
+                    gameMap[x][y - 1] == ' ' &&
+                    gameMap[x + 1][y + 1] == ' ' &&
+                    gameMap[x - 1][y - 1] == ' ' &&
+                    gameMap[x + 1][y - 1] == ' ' &&
+                    gameMap[x - 1][y + 1] == ' ') return false;
+        }
+        if (isAllowedRowBlack(x, y) || isAllowedAngle(x, y) || isAllowedColumn(x, y)) return true;
+        else return false;
     }
-    public void displayScore(){
-        System.out.println("The score of the player is :"+countPlayer);
+
+    public void displayScore() {
+        int counter1=0;
+        int counter2=0;
+        for(int i =0;i<8;i++){
+            for(int j=0;j<8;j++){
+                if(gameMap[i][j]==player1)counter1++;
+                if(gameMap[i][j]==player2)counter2++;
+            }
+        }
+        System.out.println("The score of the black player is :" + counter1);
+        System.out.println("The score of the white player is :" + counter2);
     }
 }
