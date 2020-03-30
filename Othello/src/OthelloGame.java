@@ -280,18 +280,14 @@ public class OthelloGame {
 //                }
                     return true;
                 }
-            }
+            }else return true;
         }
         for (int i = 1; i < x && i < y; i++) {
             if (x < 9 + i && y < 7 - i && x > i + 1 && y > i + 1) {
                 if (gameMap[x - i][y + i] == player2 && gameMap[x - i - 1][y + i + 1] == player1) {
-//                for (int k = i; k > 0; k--) {
-//                    if (!isEmpty(x - k, y + k))
-//                        gameMap[x - k][y + k] = player1;
-//                }
                     return true;
                 }
-            }
+            }else return true;
         }
         return false;
     }
