@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="98">
+              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OthelloGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="284" column="42" selection-start-line="284" selection-start-column="42" selection-end-line="284" selection-end-column="42" />
+            <state relative-caret-position="385">
+              <caret line="399" column="51" selection-start-line="399" selection-start-column="51" selection-end-line="399" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -159,7 +159,7 @@
       <workItem from="1585511843139" duration="97000" />
       <workItem from="1585511963162" duration="19172000" />
       <workItem from="1585598163909" duration="10568000" />
-      <workItem from="1585614174148" duration="5433000" />
+      <workItem from="1585614174148" duration="17096000" />
     </task>
     <task id="LOCAL-00001" summary="make the game board.">
       <created>1585512296339</created>
@@ -217,11 +217,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585539075638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="better map and some bug fixes.">
+      <created>1585620213262</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585620213262</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60737000" />
+    <option name="totallyTimeSpent" value="72400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -236,7 +243,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39387757" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.4367347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,7 +252,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32959184" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.68163264" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.46938777" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
@@ -269,7 +276,8 @@
     <MESSAGE value="add new methods." />
     <MESSAGE value="add display score." />
     <MESSAGE value="better score board." />
-    <option name="LAST_COMMIT_MESSAGE" value="better score board." />
+    <MESSAGE value="better map and some bug fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="better map and some bug fixes." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -284,8 +292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="98">
+          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -294,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OthelloGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="284" column="42" selection-start-line="284" selection-start-column="42" selection-end-line="284" selection-end-column="42" />
+        <state relative-caret-position="385">
+          <caret line="399" column="51" selection-start-line="399" selection-start-column="51" selection-end-line="399" selection-end-column="51" />
         </state>
       </provider>
     </entry>
