@@ -22,11 +22,7 @@ public class OthelloGame {
         this.gameMap[4][3] = '●';
         this.gameMap[3][4] = '●';
     }
-
-    public char getplayer1() {
-        return player1;
-    }
-
+    
     public void setplayer1(char player1) {
         this.player1 = player1;
         if (player1 == '◯') player2 = '●';
@@ -132,7 +128,7 @@ public class OthelloGame {
         else return false;
     }
 
-    public boolean isAllowedRowBlack(int x, int y) {
+    public boolean isAllowedRow(int x, int y) {
         for (int i = 1; i < 7 - y; i++) {
             if (!isEmpty(x, y + i)) {
                 if (gameMap[x][y + i] == player2) {
@@ -207,7 +203,6 @@ public class OthelloGame {
                 if (gameMap[x][y + i] == player2 && gameMap[x][y + i + 1] == player1) {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x, y + k)) {
-                            System.out.println("hereeeee");
                             gameMap[x][y + k] = player1;
                             gameMap[x][y] = player1;
                         }
@@ -220,7 +215,6 @@ public class OthelloGame {
                 if (gameMap[x][y - i] == player2 && gameMap[x][y - i - 1] == player1) {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x, y - k)) {
-                            System.out.println("hereee");
                             gameMap[x][y - k] = player1;
                             gameMap[x][y] = player1;
                         }
@@ -235,7 +229,6 @@ public class OthelloGame {
             if (!isEmpty(x + i, y) && !isEmpty(x + i + 1, y)) {
                 if (gameMap[x + i][y] == player2 && gameMap[x + i + 1][y] == player1) {
                     for (int k = i; k > 0; k--) {
-                        System.out.println("here");
                         if (!isEmpty(x + k, y))
                             gameMap[x + k][y] = player1;
                         gameMap[x][y] = player1;
@@ -247,7 +240,6 @@ public class OthelloGame {
             if (!isEmpty(x - i, y) && !isEmpty(x - i - 1, y)) {
                 if (gameMap[x - i][y] == player2 && gameMap[x - i - 1][y] == player1) {
                     for (int k = i; k > 0; k--) {
-                        System.out.println("heree");
                         if (!isEmpty(x - k, y))
                             gameMap[x - k][y] = player1;
                         gameMap[x][y] = player1;
@@ -264,7 +256,6 @@ public class OthelloGame {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x - k, y - k))
                             gameMap[x - k][y - k] = player1;
-                        System.out.println("angle 5");
                         gameMap[x][y] = player1;
                     }
                 }
@@ -276,7 +267,6 @@ public class OthelloGame {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x + k, y + k))
                             gameMap[x + k][y + k] = player1;
-                        System.out.println("angle 4");
                         gameMap[x][y] = player1;
                     }
                 }
@@ -288,7 +278,6 @@ public class OthelloGame {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x - k, y + k))
                             gameMap[x - k][y + k] = player1;
-                        System.out.println("angle 3");
                         gameMap[x][y] = player1;
                     }
                 }
@@ -300,7 +289,6 @@ public class OthelloGame {
                     for (int k = i; k > 0; k--) {
                         if (!isEmpty(x + k, y - k))
                         gameMap[x + k][y - k] = player1;
-                        System.out.println("angle 2");
                         gameMap[x][y] = player1;
                     }
                 }
@@ -309,7 +297,7 @@ public class OthelloGame {
     }
 
     public boolean isAllowed(int x, int y) {
-        if (isAllowedRowBlack(x, y) || isAllowedAngle(x, y) || isAllowedColumn(x, y)) return true;
+        if (isAllowedRow(x, y) || isAllowedAngle(x, y) || isAllowedColumn(x, y)) return true;
         if (x < 7 && y < 7 && x > 0 && y > 0) {
             if (gameMap[x + 1][y] == ' ' &&
                     gameMap[x][y + 1] == ' ' &&
@@ -369,14 +357,9 @@ public class OthelloGame {
         int counter2 = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (gameMap[i][j] == player1) counter1++;
-                if (gameMap[i][j] == player2) counter2++;
+                if (gameMap[i][j] == '●') counter1++;
+                if (gameMap[i][j] == '◯') counter2++;
             }
-        }
-        if(counter2>counter1){
-            int temp=counter2;
-            counter2=counter1;
-            counter1=temp;
         }
         System.out.println();
         System.out.println("                   +++++++++++++++++++++++++++++++++++++");
@@ -391,15 +374,15 @@ public class OthelloGame {
         int counter2 = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (gameMap[i][j] == player1) counter1++;
-                if (gameMap[i][j] == player2) counter2++;
-                if (!isAllowedColumn(i, j) && !isAllowedColumn(i, j) && !isAllowedRowBlack(i, j)) return true;
+                if (gameMap[i][j] == '●') counter1++;
+                if (gameMap[i][j] == '◯') counter2++;
+                //if (!isAllowedColumn(i, j) && !isAllowedRow(i, j) && !isAllowedAngle(i, j)) return true;
             }
         }
-        if (counter1 == 0 | counter2 == 0) return false;
+        if (counter1 == 0 || counter2 == 0) return false;
         if (counter1 + counter2 == 64) return false;
 
-        return false;
+        return true;
     }
 
     public void endGame() {
@@ -407,12 +390,12 @@ public class OthelloGame {
         int counter2 = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if (gameMap[i][j] == player1) counter1++;
-                if (gameMap[i][j] == player2) counter2++;
+                if (gameMap[i][j] == '●') counter1++;
+                if (gameMap[i][j] == '◯') counter2++;
             }
         }
-        if (counter1 > counter2) System.out.println("                   ! The winner is BLACK player !");
-        if (counter1 < counter2) System.out.println("                   ! The winner is WHITE player !");
-        if (counter1 == counter2) System.out.println("                   ! The game is draw !");
+        if (counter1 > counter2) System.out.println("                      ! The winner is BLACK player !");
+        if (counter1 < counter2) System.out.println("                      ! The winner is WHITE player !");
+        if (counter1 == counter2) System.out.println("                          ! The game is draw !");
     }
 }

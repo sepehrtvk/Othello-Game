@@ -16,10 +16,12 @@ public class Main {
         System.out.println("--------------------");
         switch (scanner.nextInt()) {
             case 2:
-                while (game.gameOver()) {
+                while (true) {
                     game.printMap();
+                    game.displayScore();
                     System.out.println();
                     System.out.println("Black player , choose your cell :");
+                    System.out.println("---------------------------------");
                     System.out.println();
                     System.out.println("Column (from A-H) : ");
                     String column = scanner.next();
@@ -29,8 +31,12 @@ public class Main {
                     game.move(column.charAt(0), row);
                     game.printMap();
                     game.displayScore();
-
+                    if (!game.gameOver()) {
+                        game.endGame();
+                        break;
+                    }
                     System.out.println("White player , choose your cell :");
+                    System.out.println("---------------------------------");
                     System.out.println();
                     System.out.println("Column (from A-H) : ");
                     String column2 = scanner.next();
@@ -38,16 +44,18 @@ public class Main {
                     int row2 = scanner.nextInt();
                     game.setplayer1('◯');
                     game.move(column2.charAt(0), row2);
+                    if (!game.gameOver()) {
+                        game.endGame();
+                        break;
+                    }
+                }
+            case 1:
+                while (true) {
                     game.printMap();
                     game.displayScore();
-                }
-                game.endGame();
-                break;
-            case 1:
-                while (game.gameOver()) {
-                    game.printMap();
                     System.out.println();
-                    System.out.println("Black player , choose your cell :");
+                    System.out.println("Choose your cell :");
+                    System.out.println("------------------");
                     System.out.println();
                     System.out.println("Column (from A-H) : ");
                     String column = scanner.next();
@@ -55,7 +63,10 @@ public class Main {
                     int row = scanner.nextInt();
                     game.setplayer1('●');
                     game.move(column.charAt(0), row);
-
+                    if (!game.gameOver()) {
+                        game.endGame();
+                        break;
+                    }
                     String chars = "ABCDEFGH";
 
                     game.setplayer1('◯');
@@ -74,16 +85,19 @@ public class Main {
                         if (column2 == 'H') column3 = 7;
 
                         if (game.isAllowed(row2, column3) && game.isEmpty(row2, column3)) {
-                            System.out.println(column2 + " " + (row2 + 1));
+                            System.out.println();
+                            System.out.println("Computer choosed cell in Column " + column2 + " and Row " + (row2 + 1));
+                            System.out.println();
                             game.move(column2, row2 + 1);
                             break;
                         }
                     }
-                    game.printMap();
-                    game.displayScore();
+                    if (!game.gameOver()) {
+                        game.endGame();
+                        break;
+                    }
                 }
-                game.endGame();
-                break;
+
         }
     }
 }
