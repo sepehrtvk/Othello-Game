@@ -1,5 +1,21 @@
-public class GameBoard extends OthelloGame {
+/**
+ * the GameBoard class represents a board for the game with some methods to add or
+ * change a disk color if posiible.
+ * this class inherits form the OthelloGame class.
 
+ * @author sepehr tavakoli
+ * @version 1.0
+ * @since 2020.04.01
+ */
+
+public class GameBoard extends OthelloGame {
+    /**
+     * the move method takes the row and column of a block and checks if the block is allowed to
+     * have a disk , puts the disk in to the block.
+     *
+     * @param x column of the the block.
+     * @param y row of the the block.
+     */
     public void move(char x, int y) {
 
         switch (x) {
@@ -74,11 +90,26 @@ public class GameBoard extends OthelloGame {
         }
     }
 
+    /**
+     * this method check if the block is empty or not.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     * @return true if the block is empty.
+     */
     public boolean isBlockEmpty(int x, int y) {
         if (gameMap[x][y] == ' ') return true;
         else return false;
     }
 
+    /**
+     * the isAllowedMoveRow method checks that if the selected block is allowed to put a disk into it or not.
+     * it checks right and left of the selected block.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     * @return true if the block is allowed for disk.
+     */
     public boolean isAllowedMoveRow(int x, int y) {
         for (int i = 1; i < 7 - y; i++) {
             if (!isBlockEmpty(x, y + i)) {
@@ -97,6 +128,15 @@ public class GameBoard extends OthelloGame {
         return false;
     }
 
+    /**
+     * the isAllowedMoveColumn method checks that if the selected block is allowed to put a disk into it or not.
+     * it checks up and down of the selected block.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     * @return true if the block is allowed for disk.
+     */
+
     public boolean isAllowedMoveColumn(int x, int y) {
         for (int i = 1; i < 7 - x; i++) {
             if (!isBlockEmpty(x + i, y)) {
@@ -114,6 +154,15 @@ public class GameBoard extends OthelloGame {
         }
         return false;
     }
+
+    /**
+     * the isAllowedMoveAngle method checks that if the selected block is allowed to put a disk into it or not.
+     * it checks up-right , up-left , down-right and down-left of the selected block.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     * @return true if the block is allowed for disk.
+     */
 
     public boolean isAllowedMoveAngle(int x, int y) {
         for (int i = 1; i < x - 1 && i < y - 1; i++) {
@@ -148,6 +197,12 @@ public class GameBoard extends OthelloGame {
         return false;
     }
 
+    /**
+     * this moveInRow method checks each row and if 2 disks blocked by another color , turn all of them to the current color.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     */
     public void moveInRow(int x, int y) {
         for (int i = 1; i < 7 - y; i++) {
             if (!isBlockEmpty(x, y + i) && !isBlockEmpty(x, y + i + 1)) {
@@ -175,6 +230,13 @@ public class GameBoard extends OthelloGame {
         }
     }
 
+    /**
+     * this moveInColumn method checks each column and if 2 disks blocked by another color , turn all of them to the current color.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     */
+
     public void moveInColumn(int x, int y) {
         for (int i = 1; i < 7 - x; i++) {
             if (!isBlockEmpty(x + i, y) && !isBlockEmpty(x + i + 1, y)) {
@@ -199,6 +261,14 @@ public class GameBoard extends OthelloGame {
             } else break;
         }
     }
+
+    /**
+     * this moveInAngle method checks each up-right , up-left , down-right and down-left of the selected block
+     * and if 2 disks blocked by another color , turn all of them to the current color.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     */
 
     public void moveInAngle(int x, int y) {
         for (int i = 1; i < x - 1 && i < y - 1; i++) {
@@ -247,6 +317,13 @@ public class GameBoard extends OthelloGame {
         }
     }
 
+    /**
+     * the isAllowedMove method checks if the player does not have any move , the game has finished.
+     *
+     * @param x column of the block want to check.
+     * @param y row of the block want to check.
+     * @return false if player can not add a disk.
+     */
     public boolean isAllowedMove(int x, int y) {
         if (isAllowedMoveRow(x, y) || isAllowedMoveAngle(x, y) || isAllowedMoveColumn(x, y)) return true;
         if (x < 7 && y < 7 && x > 0 && y > 0) {

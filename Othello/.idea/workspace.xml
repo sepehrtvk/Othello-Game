@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e4d5d78-364d-4e48-8759-5b9e50a9d605" name="Default Changelist" comment="better score board.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="1e4d5d78-364d-4e48-8759-5b9e50a9d605" name="Default Changelist" comment="add menu and better print.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Othello/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Othello/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Othello/OthelloGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Othello/OthelloGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiPlayerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiPlayerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OthelloGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OthelloGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SinglePlayerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SinglePlayerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pentago/src/PentagoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Pentago/src/PentagoGame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="630">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -36,8 +36,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OthelloGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="399" column="51" selection-start-line="399" selection-start-column="51" selection-end-line="399" selection-end-column="51" />
+            <state relative-caret-position="389">
+              <caret line="115" column="57" selection-start-line="115" selection-start-column="57" selection-end-line="115" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-612">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SinglePlayerGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-345">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MultiPlayerGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="742">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -55,10 +85,16 @@
     <findStrings>
       <find>player</find>
       <find>player12</find>
+      <find>isAllowedRowBlack</find>
+      <find>displayScore</find>
+      <find>isAllowedMoveMoveMove</find>
     </findStrings>
     <replaceStrings>
       <replace>player1</replace>
       <replace>player2</replace>
+      <replace>isAllowedRow</replace>
+      <replace>displayScoreBoard</replace>
+      <replace>isAllowedMove</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -70,7 +106,12 @@
         <option value="$PROJECT_DIR$/src/WhiteDisk.java" />
         <option value="$PROJECT_DIR$/src/BlackDisk.java" />
         <option value="$PROJECT_DIR$/src/Disk.java" />
+        <option value="$PROJECT_DIR$/src/SinglePlayer.java" />
+        <option value="$PROJECT_DIR$/src/MultiPlayer.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/GameBoard.java" />
+        <option value="$PROJECT_DIR$/src/MultiPlayerGame.java" />
+        <option value="$PROJECT_DIR$/src/SinglePlayerGame.java" />
         <option value="$PROJECT_DIR$/src/OthelloGame.java" />
       </list>
     </option>
@@ -159,7 +200,15 @@
       <workItem from="1585511843139" duration="97000" />
       <workItem from="1585511963162" duration="19172000" />
       <workItem from="1585598163909" duration="10568000" />
-      <workItem from="1585614174148" duration="17096000" />
+      <workItem from="1585614174148" duration="20331000" />
+      <workItem from="1585707289397" duration="4939000" />
+      <workItem from="1585712861604" duration="176000" />
+      <workItem from="1585903638556" duration="344000" />
+      <workItem from="1586081950113" duration="3317000" />
+      <workItem from="1586085374553" duration="103000" />
+      <workItem from="1586085583755" duration="1826000" />
+      <workItem from="1586088463722" duration="520000" />
+      <workItem from="1586089013798" duration="3754000" />
     </task>
     <task id="LOCAL-00001" summary="make the game board.">
       <created>1585512296339</created>
@@ -224,17 +273,45 @@
       <option name="project" value="LOCAL" />
       <updated>1585620213262</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add multiplayer and bug fixes.">
+      <created>1585633925096</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585633925096</updated>
+    </task>
+    <task id="LOCAL-00011" summary="better score board.">
+      <created>1585634003023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585634003023</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add menu and better print.">
+      <created>1585708583963</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585708583963</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add classes SinglePlayer , MultiPlayer and GameBoard.">
+      <created>1586088294202</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586088294202</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72400000" />
+    <option name="totallyTimeSpent" value="90614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2899878" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -243,7 +320,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.4367347" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.63061225" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -275,9 +352,12 @@
     <MESSAGE value="add angle move." />
     <MESSAGE value="add new methods." />
     <MESSAGE value="add display score." />
-    <MESSAGE value="better score board." />
     <MESSAGE value="better map and some bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="better map and some bug fixes." />
+    <MESSAGE value="add multiplayer and bug fixes." />
+    <MESSAGE value="better score board." />
+    <MESSAGE value="add menu and better print." />
+    <MESSAGE value="add classes SinglePlayer , MultiPlayer and GameBoard." />
+    <option name="LAST_COMMIT_MESSAGE" value="add classes SinglePlayer , MultiPlayer and GameBoard." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -290,20 +370,43 @@
     <entry file="file://$PROJECT_DIR$/src/Main.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SinglePlayer.java" />
+    <entry file="file://$PROJECT_DIR$/src/MultiPlayer.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        <state relative-caret-position="630">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultiPlayerGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SinglePlayerGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OthelloGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="399" column="51" selection-start-line="399" selection-start-column="51" selection-end-line="399" selection-end-column="51" />
+        <state relative-caret-position="389">
+          <caret line="115" column="57" selection-start-line="115" selection-start-column="57" selection-end-line="115" selection-end-column="57" />
         </state>
       </provider>
     </entry>
