@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 
 public class OthelloGame {
+
     private char gameMap[][] = new char[8][8];
     private char player1;
     private char player2;
@@ -22,7 +23,7 @@ public class OthelloGame {
         this.gameMap[4][3] = '●';
         this.gameMap[3][4] = '●';
     }
-    
+
     public void setplayer1(char player1) {
         this.player1 = player1;
         if (player1 == '◯') player2 = '●';
@@ -51,158 +52,155 @@ public class OthelloGame {
     public void move(char x, int y) {
         switch (x) {
             case 'A':
-                if (isEmpty(y - 1, 0) && isAllowed(y - 1, 0)) {
-                    checkRow(y - 1, 0);
-                    checkColumn(y - 1, 0);
-                    checkAngle(y - 1, 0);
-                }
+                if (isBlockEmpty(y - 1, 0) && isAllowedMove(y - 1, 0)) {
+                    moveInRow(y - 1, 0);
+                    moveInColumn(y - 1, 0);
+                    moveInAngle(y - 1, 0);
+                } else System.out.println("      !  PASS  ! ");
 
                 break;
             case 'B':
-                if (isEmpty(y - 1, 1) && isAllowed(y - 1, 1)) {
-                    checkRow(y - 1, 1);
-                    checkColumn(y - 1, 1);
-                    checkAngle(y - 1, 1);
-                }
+                if (isBlockEmpty(y - 1, 1) && isAllowedMove(y - 1, 1)) {
+                    moveInRow(y - 1, 1);
+                    moveInColumn(y - 1, 1);
+                    moveInAngle(y - 1, 1);
+                } else System.out.println("      !  PASS  ! ");
 
 
                 break;
             case 'C':
-                if (isEmpty(y - 1, 2) && isAllowed(y - 1, 2)) {
-                    checkRow(y - 1, 2);
-                    checkColumn(y - 1, 2);
-                    checkAngle(y - 1, 2);
-                }
+                if (isBlockEmpty(y - 1, 2) && isAllowedMove(y - 1, 2)) {
+                    moveInRow(y - 1, 2);
+                    moveInColumn(y - 1, 2);
+                    moveInAngle(y - 1, 2);
+                } else System.out.println("      !  PASS  ! ");
 
                 break;
             case 'D':
-                if (isEmpty(y - 1, 3) && isAllowed(y - 1, 3)) {
-                    checkRow(y - 1, 3);
-                    checkColumn(y - 1, 3);
-                    checkAngle(y - 1, 3);
-                }
+                if (isBlockEmpty(y - 1, 3) && isAllowedMove(y - 1, 3)) {
+                    moveInRow(y - 1, 3);
+                    moveInColumn(y - 1, 3);
+                    moveInAngle(y - 1, 3);
+                } else System.out.println("      !  PASS  ! ");
 
 
                 break;
             case 'E':
-                if (isEmpty(y - 1, 4) && isAllowed(y - 1, 4)) {
-                    checkRow(y - 1, 4);
-                    checkColumn(y - 1, 4);
-                    checkAngle(y - 1, 4);
-                }
+                if (isBlockEmpty(y - 1, 4) && isAllowedMove(y - 1, 4)) {
+                    moveInRow(y - 1, 4);
+                    moveInColumn(y - 1, 4);
+                    moveInAngle(y - 1, 4);
+                } else System.out.println("      !  PASS  ! ");
 
 
                 break;
             case 'F':
-                if (isEmpty(y - 1, 5) && isAllowed(y - 1, 5)) {
-                    checkRow(y - 1, 5);
-                    checkColumn(y - 1, 5);
-                    checkAngle(y - 1, 5);
-                }
-
+                if (isBlockEmpty(y - 1, 5) && isAllowedMove(y - 1, 5)) {
+                    moveInRow(y - 1, 5);
+                    moveInColumn(y - 1, 5);
+                    moveInAngle(y - 1, 5);
+                } else System.out.println("      !  PASS  ! ");
 
                 break;
             case 'G':
-                if (isEmpty(y - 1, 6) && isAllowed(y - 1, 6)) {
-                    checkRow(y - 1, 6);
-                    checkColumn(y - 1, 6);
-                    checkAngle(y - 1, 6);
-                }
+                if (isBlockEmpty(y - 1, 6) && isAllowedMove(y - 1, 6)) {
+                    moveInRow(y - 1, 6);
+                    moveInColumn(y - 1, 6);
+                    moveInAngle(y - 1, 6);
+                } else System.out.println("      !  PASS  ! ");
 
 
                 break;
             case 'H':
-                if (isEmpty(y - 1, 7) && isAllowed(y - 1, 7)) {
-                    checkRow(y - 1, 7);
-                    checkColumn(y - 1, 7);
-                    checkAngle(y - 1, 7);
-                }
-
-
+                if (isBlockEmpty(y - 1, 7) && isAllowedMove(y - 1, 7)) {
+                    moveInRow(y - 1, 7);
+                    moveInColumn(y - 1, 7);
+                    moveInAngle(y - 1, 7);
+                } else System.out.println("!  PASS  ! ");
                 break;
         }
     }
 
-    public boolean isEmpty(int x, int y) {
-        if (gameMap[x][y]==' ') return true;
+    public boolean isBlockEmpty(int x, int y) {
+        if (gameMap[x][y] == ' ') return true;
         else return false;
     }
 
-    public boolean isAllowedRow(int x, int y) {
+    public boolean isAllowedMoveRow(int x, int y) {
         for (int i = 1; i < 7 - y; i++) {
-            if (!isEmpty(x, y + i)) {
+            if (!isBlockEmpty(x, y + i)) {
                 if (gameMap[x][y + i] == player2) {
                     if (gameMap[x][y + i + 1] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < y - 1; i++) {
-            if (!isEmpty(x, y - i)) {
+            if (!isBlockEmpty(x, y - i)) {
                 if (gameMap[x][y - i] == player2) {
                     if (gameMap[x][y - i - 1] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
         return false;
     }
 
-    public boolean isAllowedColumn(int x, int y) {
+    public boolean isAllowedMoveColumn(int x, int y) {
         for (int i = 1; i < 7 - x; i++) {
-            if (!isEmpty(x + i, y)) {
+            if (!isBlockEmpty(x + i, y)) {
                 if (gameMap[x + i][y] == player2) {
                     if (gameMap[x + i + 1][y] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < x - 1; i++) {
-            if (!isEmpty(x - i, y)) {
+            if (!isBlockEmpty(x - i, y)) {
                 if (gameMap[x - i][y] == player2) {
                     if (gameMap[x - i - 1][y] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
         return false;
     }
 
-    public boolean isAllowedAngle(int x, int y) {
-        for (int i = 1; i < x-1 && i < y-1; i++) {
-            if (!isEmpty(x - i, y - i)) {
+    public boolean isAllowedMoveAngle(int x, int y) {
+        for (int i = 1; i < x - 1 && i < y - 1; i++) {
+            if (!isBlockEmpty(x - i, y - i)) {
                 if (gameMap[x - i][y - i] == player2) {
                     if (gameMap[x - i - 1][y - i - 1] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < 7 - x && i < 7 - y; i++) {
-            if (!isEmpty(x + i, y + i)) {
+            if (!isBlockEmpty(x + i, y + i)) {
                 if (gameMap[x + i][y + i] == player2) {
                     if (gameMap[x + i + 1][y + i + 1] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
-        for (int i = 1; i < 7 - y && i < x-1; i++) {
-            if (!isEmpty(x - i, y + i)) {
+        for (int i = 1; i < 7 - y && i < x - 1; i++) {
+            if (!isBlockEmpty(x - i, y + i)) {
                 if (gameMap[x - i][y + i] == player2) {
                     if (gameMap[x - i - 1][y + i + 1] == player1) return true;
                 }
-            }else break;
+            } else break;
         }
-        for (int i = 1; i < 7 - x && i < y-1; i++) {
-            if (!isEmpty(x + i, y - i)) {
+        for (int i = 1; i < 7 - x && i < y - 1; i++) {
+            if (!isBlockEmpty(x + i, y - i)) {
                 if (gameMap[x + i][y - i] == player2) {
                     if (gameMap[x + i + 1][y - i - 1] == player1) return true;
 
                 }
-            }else break;
+            } else break;
         }
         return false;
     }
 
-    public void checkRow(int x, int y) {
+    public void moveInRow(int x, int y) {
         for (int i = 1; i < 7 - y; i++) {
-            if (!isEmpty(x, y + i) && !isEmpty(x, y + i + 1)) {
+            if (!isBlockEmpty(x, y + i) && !isBlockEmpty(x, y + i + 1)) {
                 if (gameMap[x][y + i] == player2 && gameMap[x][y + i + 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x, y + k)) {
+                        if (!isBlockEmpty(x, y + k)) {
                             gameMap[x][y + k] = player1;
                             gameMap[x][y] = player1;
                         }
@@ -211,10 +209,10 @@ public class OthelloGame {
             }
         }
         for (int i = 1; i < y - 1; i++) {
-            if (!isEmpty(x, y - i) && !isEmpty(x, y - i - 1)) {
+            if (!isBlockEmpty(x, y - i) && !isBlockEmpty(x, y - i - 1)) {
                 if (gameMap[x][y - i] == player2 && gameMap[x][y - i - 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x, y - k)) {
+                        if (!isBlockEmpty(x, y - k)) {
                             gameMap[x][y - k] = player1;
                             gameMap[x][y] = player1;
                         }
@@ -224,80 +222,80 @@ public class OthelloGame {
         }
     }
 
-    public void checkColumn(int x, int y) {
+    public void moveInColumn(int x, int y) {
         for (int i = 1; i < 7 - x; i++) {
-            if (!isEmpty(x + i, y) && !isEmpty(x + i + 1, y)) {
+            if (!isBlockEmpty(x + i, y) && !isBlockEmpty(x + i + 1, y)) {
                 if (gameMap[x + i][y] == player2 && gameMap[x + i + 1][y] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x + k, y))
+                        if (!isBlockEmpty(x + k, y))
                             gameMap[x + k][y] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < x - 1; i++) {
-            if (!isEmpty(x - i, y) && !isEmpty(x - i - 1, y)) {
+            if (!isBlockEmpty(x - i, y) && !isBlockEmpty(x - i - 1, y)) {
                 if (gameMap[x - i][y] == player2 && gameMap[x - i - 1][y] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x - k, y))
+                        if (!isBlockEmpty(x - k, y))
                             gameMap[x - k][y] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
     }
 
-    public void checkAngle(int x, int y) {
+    public void moveInAngle(int x, int y) {
         for (int i = 1; i < x - 1 && i < y - 1; i++) {
-            if (!isEmpty(x - i, y - i) && !isEmpty(x - 1 - i, y - i - 1)) {
+            if (!isBlockEmpty(x - i, y - i) && !isBlockEmpty(x - 1 - i, y - i - 1)) {
                 if (gameMap[x - i][y - i] == player2 && gameMap[x - i - 1][y - i - 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x - k, y - k))
+                        if (!isBlockEmpty(x - k, y - k))
                             gameMap[x - k][y - k] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < 7 - x && i < 7 - y; i++) {
-            if (!isEmpty(x + i, y + i) && !isEmpty(x + 1 + i, y + i + 1)) {
+            if (!isBlockEmpty(x + i, y + i) && !isBlockEmpty(x + 1 + i, y + i + 1)) {
                 if (gameMap[x + i][y + i] == player2 && gameMap[x + i + 1][y + i + 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x + k, y + k))
+                        if (!isBlockEmpty(x + k, y + k))
                             gameMap[x + k][y + k] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < 7 - y && i < x - 1; i++) {
-            if (!isEmpty(x - i, y + i) && !isEmpty(x - 1 - i, y + i + 1)) {
+            if (!isBlockEmpty(x - i, y + i) && !isBlockEmpty(x - 1 - i, y + i + 1)) {
                 if (gameMap[x - i][y + i] == player2 && gameMap[x - i - 1][y + i + 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x - k, y + k))
+                        if (!isBlockEmpty(x - k, y + k))
                             gameMap[x - k][y + k] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
         for (int i = 1; i < 7 - x && i < y - 1; i++) {
-            if (!isEmpty(x + i, y - i) && !isEmpty(x + 1 + i, y - i - 1)) {
+            if (!isBlockEmpty(x + i, y - i) && !isBlockEmpty(x + 1 + i, y - i - 1)) {
                 if (gameMap[x + i][y - i] == player2 && gameMap[x + i + 1][y - i - 1] == player1) {
                     for (int k = i; k > 0; k--) {
-                        if (!isEmpty(x + k, y - k))
-                        gameMap[x + k][y - k] = player1;
+                        if (!isBlockEmpty(x + k, y - k))
+                            gameMap[x + k][y - k] = player1;
                         gameMap[x][y] = player1;
                     }
                 }
-            }else break;
+            } else break;
         }
     }
 
-    public boolean isAllowed(int x, int y) {
-        if (isAllowedRow(x, y) || isAllowedAngle(x, y) || isAllowedColumn(x, y)) return true;
+    public boolean isAllowedMove(int x, int y) {
+        if (isAllowedMoveRow(x, y) || isAllowedMoveAngle(x, y) || isAllowedMoveColumn(x, y)) return true;
         if (x < 7 && y < 7 && x > 0 && y > 0) {
             if (gameMap[x + 1][y] == ' ' &&
                     gameMap[x][y + 1] == ' ' &&
@@ -348,11 +346,11 @@ public class OthelloGame {
         if (x == 7 && y == 0) {
             if (gameMap[6][0] == ' ' && gameMap[1][7] == ' ' && gameMap[1][6] == ' ') return false;
         }
-
+        if (gameOver()) return false;
         return false;
     }
 
-    public void displayScore() {
+    public void displayScoreBoard() {
         int counter1 = 0;
         int counter2 = 0;
         for (int i = 0; i < 8; i++) {
@@ -376,13 +374,12 @@ public class OthelloGame {
             for (int j = 0; j < 8; j++) {
                 if (gameMap[i][j] == '●') counter1++;
                 if (gameMap[i][j] == '◯') counter2++;
-                //if (!isAllowedColumn(i, j) && !isAllowedRow(i, j) && !isAllowedAngle(i, j)) return true;
             }
         }
         if (counter1 == 0 || counter2 == 0) return false;
         if (counter1 + counter2 == 64) return false;
-
         return true;
+
     }
 
     public void endGame() {
