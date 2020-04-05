@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MultiPlayerGame extends OthelloGame {
+public class MultiPlayerGame extends GameBoard {
 
     public void startMultiPlayerGame() {
         Scanner scanner = new Scanner(System.in);

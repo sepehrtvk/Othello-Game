@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class SinglePlayerGame extends OthelloGame {
+public class SinglePlayerGame extends GameBoard {
 
     public void startSinglePlayerGame() {
         Scanner scanner = new Scanner(System.in);
